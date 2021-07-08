@@ -7,9 +7,9 @@
     <title>Can't STOP</title>
   </head>
   <body>
-    <script src="/socket.io/socket.io.js"></script>
+   
     <script>
-      var socket = io();
+      const ws = new WebSocket("ws://localhost:1026");
     </script>
 
     <div>Ecrivez votre nom</div>
