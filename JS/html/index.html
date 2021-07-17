@@ -3,21 +3,23 @@
   <head>
     <meta charset="utf-8">
     <!--<link rel="stylesheet" href="../css/acceuil.css"> -->
-    <script src="client.js"></script>
-    <title>Can't STOP</title>
+
+   <title>Can't STOP</title>
+
+    <script  src="socket.io.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
   </head>
   <body>
    
-    <script>
-      const ws = new WebSocket("ws://localhost:1026");
-    </script>
+
 
     <div>Ecrivez votre nom</div>
     
         <div>
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="user_name" >
-            <button onclick=connexion()>submit</button>
+            <label for="name">Lancez les dés:</label>
+            <button onclick="send()">Lancer</button>
+            <div>Valeur des dés tiré : 0 - 0 - 0 - 0</div>
         </div>
        
   </body>

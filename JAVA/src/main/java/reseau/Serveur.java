@@ -3,7 +3,9 @@ package reseau;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
+
+import jeu.Identification;
+
 
 
 /**
@@ -13,6 +15,22 @@ import java.util.ArrayList;
  *
  */
 public class Serveur {
+	
+	Identification leClient;
+	
+	ConnexionServeur connexion;
+	
+	public ConnexionServeur getConnexion() {return connexion;}
+	
+	public void setConnexion(ConnexionServeur connexion) {this.connexion = connexion;}
+	
+	public Serveur() {
+		
+	}
+	
+	public void demarrer() {
+		connexion.demarrer();
+	}
 
 	/**
 	 * 
@@ -22,25 +40,18 @@ public class Serveur {
 	 * @throws InterruptedException
 	 */
 
-	public static void main (String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+	public static final void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 	
-		ServerSocket ss = new ServerSocket(1026);
-		System.out.println("En attente de connexion d'un client");
-		Socket s = ss.accept();
-		System.out.println("Connexion établie");
+		Serveur serveur = new Serveur();
 		
-		//Récupération des donnée envoyée par le client
-		DataInputStream in = new DataInputStream(s.getInputStream());
-		String nomClient = in.readUTF();
+		ConnexionServeur connexion = new ConnexionServeur("127.0.0.1",10108);
 		
-		//Traitement
-		String s1 = "Bien enregistré "+nomClient+", la connexion c'est bien déroulé";
+		connexion.setMoteur(serveur);
+		serveur.setConnexion(connexion);
 		
-		//Envoi de la donnée au client
-		DataOutputStream out = new DataOutputStream(s.getOutputStream());
-		out.writeUTF(s1);
+		serveur.demarrer();
 		
-		ss.close();
+		
 	}
 	
 }
