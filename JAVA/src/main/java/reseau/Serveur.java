@@ -20,6 +20,8 @@ public class Serveur {
 	
 	ConnexionServeur connexion;
 	
+	
+	
 	public ConnexionServeur getConnexion() {return connexion;}
 	
 	public void setConnexion(ConnexionServeur connexion) {this.connexion = connexion;}
@@ -44,9 +46,8 @@ public class Serveur {
 	
 		Serveur serveur = new Serveur();
 		
-		ConnexionServeur connexion = new ConnexionServeur("127.0.0.1",10108);
+		ConnexionServeur connexion = new ConnexionServeur("127.0.0.1",10109);
 		
-		connexion.setMoteur(serveur);
 		serveur.setConnexion(connexion);
 		
 		serveur.demarrer();

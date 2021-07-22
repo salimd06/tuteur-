@@ -1,19 +1,14 @@
 window.addEventListener("DOMContentLoaded", () => init());
 
-const socket = io('http://localhost:10108/');
+const socket = io('http://localhost:10109/');
 
 function init() {
   
-  socket.emit("Identification",{nom: 'Michel'})
+  socket.emit("identification",{nom: 'Salim',niveau: 1})
   
-  const bouton = document.getElementById("jouer");
-
-  socket.on("connect", () => {
+  socket.on("coucou", () => {
               console.log("connecté !")
-              socket.emit("Nom", {nom: 'All good'});
           });
 }
 
-function send() {
-  socket.emit("Lancer", {statut: 'oui'});
-}
+

@@ -8,19 +8,23 @@
 
     <script  src="socket.io.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
-    
+    <script src="/js/send.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/index.css"/>
+    <script src="/js/background.js"></script>
+
   </head>
   <body>
    
 
 
-    <div>Ecrivez votre nom</div>
     
-        <div>
-            <label for="name">Lancez les dés:</label>
-            <button onclick="send()">Lancer</button>
-            <div>Valeur des dés tiré : 0 - 0 - 0 - 0</div>
-        </div>
+      <div id="gradient">
+          <div id="titre">CAN'T STOP</div>
+          <button>LANCER LE JEU</button>
+          <button onclick="send()">Lancer</button>
+          <div>Valeur des dés tiré : 0 - 0 - 0 - 0</div>
+      </div>
        
   </body>
 

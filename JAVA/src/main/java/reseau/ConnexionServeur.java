@@ -3,6 +3,13 @@ package reseau;
 import com.corundumstudio.socketio.AckRequest;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.listener.ConnectListener;
+import com.corundumstudio.socketio.listener.DataListener;
+
+import jeu.Des;
+import jeu.GestionnaireJeu;
+import jeu.Identification;
+import jeu.Lancer;
+
 import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOClient;
 
@@ -11,7 +18,8 @@ import com.corundumstudio.socketio.SocketIOClient;
 public class ConnexionServeur {
 	
 	SocketIOServer serveur;
-	
+	Identification leClient;
+	GestionnaireJeu gestionnaire = new GestionnaireJeu();
 	
 	SocketIOServer getServeur() { return serveur;}
 	
@@ -30,15 +38,37 @@ public class ConnexionServeur {
 				System.out.println("connexion de "+socketIOClient.getRemoteAddress());
 			}
 		});
-	}
+		
+		 // réception d'une identification
+    serveur.addEventListener("identification", Identification.class, new DataListener<Identification>() {
+        public void onData(SocketIOClient socketIOClient, Identification identification, AckRequest ackRequest) throws Exception {
+            System.out.println("Le client est "+identification.getNom());
+            leClient = new Identification(identification.getNom(), identification.getNiveau());    
+        }
+    });
+    
+    serveur.addEventListener("lancer", Lancer.class, new DataListener<Lancer>() {
+        public void onData(SocketIOClient socketIOClient, Lancer lancer, AckRequest ackRequest) throws Exception {
+            System.out.println("Un lancé a été demandé "+lancer.getStatut());
+             gestionnaire.FaireUnLancer();
+             
+             //On renvoi les dés tirés
+             EnvoyerDes(socketIOClient,gestionnaire);
+        }
+    });
 
+}
+	
+	private void EnvoyerDes(SocketIOClient socketIOClient,GestionnaireJeu gs) {
+		socketIOClient.sendEvent("lancer",gs.LesDes());
+	}
+	
 	public void demarrer() {
 		// TODO Auto-generated method stub
 		serveur.start();
 		
 	}
 
-	public void setMoteur(Serveur serveur2) {
-		// TODO Auto-generated method stub
-	}
+
 }
+
