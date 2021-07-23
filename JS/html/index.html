@@ -7,11 +7,10 @@
    <title>Can't STOP</title>
 
     <script  src="socket.io.js"></script>
-    <script type="text/javascript" src="/js/index.js"></script>
-    <script src="/js/send.js"></script>
+    <script type="text/javascript" src="/js/connexionClient.js"></script>
+    <script src="/js/lancer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/index.css"/>
-    <script src="/js/background.js"></script>
 
   </head>
   <body>
@@ -19,10 +18,10 @@
 
 
     
-      <div id="gradient">
+      <div>
           <div id="titre">CAN'T STOP</div>
           <button>LANCER LE JEU</button>
-          <button onclick="send()">Lancer</button>
+          <button onclick="new lancer().LancerDe()">Lancer</button>
           <div>Valeur des dés tiré : 0 - 0 - 0 - 0</div>
       </div>
        

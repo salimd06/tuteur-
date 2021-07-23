@@ -12,11 +12,7 @@ public class GestionnaireJeu {
 	}
 	
 	public void FaireUnLancer() {
-		int de1 = (int) (Math.random() * ( 6 - 1 ));
-		int de2 = (int) (Math.random() * ( 6 - 1 ));
-		int de3 = (int) (Math.random() * ( 6 - 1 ));
-		int de4 = (int) (Math.random() * ( 6 - 1 ));
-		lesdes.setDe(de1, de2, de3, de4);
+		lancer.FaireLancer(lesdes);
 	}
 	
 	public ArrayList<Integer> LesDes() {
