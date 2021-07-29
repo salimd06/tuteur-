@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <!--<link rel="stylesheet" href="../css/acceuil.css"> -->
+
+   <title>Can't STOP</title>
+
+    <script  src="socket.io.js"></script>
+    <script type="text/javascript" src="/js/connexionClient.js"></script>
+    <script src="/js/lancer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/index.css"/>
+    <link rel="stylesheet" href="/css/jeu.css"/>
+    <script src="/js/jeu.js"></script>
+
+  </head>
+  <body>
+   
+
+   
+    
+      
+          <div id="titre">CAN'T STOP</div>
+          <canvas id="myCanvas" width=1200" height="700" style="border:1px solid 
+          #d3d3d3;">
+          <script>new jeu(1200,700).dessinerJeu()</script>
+          </canvas>
+          
+            <div id="de">
+          <button class="big-button" onclick="new lancer().LancerDe()">Lancer Dé</button>
+          <div id="resultat">0 - 0 - 0 - 0</div>
+            </div>
+      
+ 
+  </body>
+
+</html>

@@ -46,7 +46,7 @@ public class Serveur {
 	
 		Serveur serveur = new Serveur();
 		
-		ConnexionServeur connexion = new ConnexionServeur("127.0.0.1",10109);
+		ConnexionServeur connexion = new ConnexionServeur("127.0.0.1",10110);
 		
 		serveur.setConnexion(connexion);
 		

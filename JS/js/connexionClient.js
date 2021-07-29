@@ -6,10 +6,6 @@ class connexionClient {
     init() {
   
         this.socket.emit("identification",{nom: 'Salim',niveau: 1})
-        
-        this.socket.on("coucou", () => {
-                    console.log("connecté !")
-                });
       }
       
 }

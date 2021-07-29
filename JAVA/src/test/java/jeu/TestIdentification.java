@@ -1,8 +1,13 @@
 package jeu;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+
 
 public class TestIdentification {
+
+	@Test
 	public void testIdentification() {
 		Identification id = new Identification("John",10);
 		assertEquals(id.getNom(),"John");
