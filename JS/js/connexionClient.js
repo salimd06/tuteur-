@@ -9,8 +9,7 @@ class connexionClient {
       }
       
 }
-this.socket = io('http://localhost:10109/');
-window.addEventListener("DOMContentLoaded", () => new connexionClient(socket).init());
+
 
 
 
