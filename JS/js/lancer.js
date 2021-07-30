@@ -1,19 +1,18 @@
 class lancer{
-    constructor(statut){
+    constructor(connexion, statut){
+        this.connexion = connexion;
         this.statut = statut;
     }
 
     LancerDe(){
         console.log("on lannce")
-        socket.emit("lancer", {statut: 'oui'});
+        this.connexion.demanderLancer({statut: 'oui'});
     
-        socket.on("lancer", (lancer) => {
-            console.log(`Vous avez tirer les dés suivant :${lancer}`)
-            this.AfficherDe(lancer);
-        });
+
     }
 
     AfficherDe(lesdes){
+        console.log(`Vous avez tirer les dés suivant :${lesdes}`)
          var de = document.getElementById("resultat");
         de.innerText = `${lesdes[0]},${lesdes[1]},${lesdes[2]},${lesdes[3]}`;
     };

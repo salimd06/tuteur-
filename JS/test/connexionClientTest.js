@@ -1,7 +1,7 @@
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const assert = require("chai").assert;
-const client = require("../js/connexionClient");
+const client = require("../js/reseau/connexionClient");
 
 
 // with { "type": "commonjs" } in your package.json
