@@ -3,8 +3,8 @@ class connexionClient {
         this.socket = socket;
     }
 
-    setLancer(lancer) {
-        this.lancer = lancer;
+    setLancer(controleur) {
+        this.lancer = controleur;
     }
 
     init() {
@@ -12,14 +12,20 @@ class connexionClient {
         this.socket.on("lancer", (lancer) => {
             this.lancer.AfficherDe(lancer);
         });
-
+        
         // et on déclenche le jeu
-        this.socket.emit("identification",{nom: 'Salim',niveau: 1})
+        this.socket.emit("identification",{nom: "ss",niveau: 1})
       }
 
     demanderLancer(attachement) {
         this.socket.emit("lancer", attachement);
     }
+
+    EnvoyerCombi(attachement){
+        this.socket.emit("combinaison",attachement);
+        console.log(attachement);
+    }
+ 
       
 }
 

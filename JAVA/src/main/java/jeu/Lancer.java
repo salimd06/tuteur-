@@ -20,10 +20,10 @@ public class Lancer {
 	
 	public void FaireLancer(Des lesdes) {
 		
-		int de1 = random.nextInt(7);
-		int de2 = random.nextInt(7);
-		int de3 = random.nextInt(7);
-		int de4 = random.nextInt(7);
+		int de1 = random.nextInt(6)+1;
+		int de2 = random.nextInt(6)+1;
+		int de3 = random.nextInt(6)+1;
+		int de4 = random.nextInt(6)+1;
 		lesdes.setDe(de1, de2, de3, de4);
 	}
 	

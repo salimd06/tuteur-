@@ -3,7 +3,9 @@ package reseau;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
+import jeu.GestionnaireJeu;
 import jeu.Identification;
 
 
@@ -18,7 +20,7 @@ public class Serveur {
 	
 	Identification leClient;
 	
-	ConnexionServeur connexion;
+	static ConnexionServeur connexion;
 	
 	
 	
@@ -33,7 +35,8 @@ public class Serveur {
 	public void demarrer() {
 		connexion.demarrer();
 	}
-
+	
+	
 	/**
 	 * 
 	 * @param args
@@ -45,14 +48,24 @@ public class Serveur {
 	public static final void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 	
 		Serveur serveur = new Serveur();
+		GestionnaireJeu gestionnaire = new GestionnaireJeu();
 		
 		ConnexionServeur connexion = new ConnexionServeur("127.0.0.1",10110);
 		
+		
+
 		serveur.setConnexion(connexion);
 		
 		serveur.demarrer();
 		
 		
+		
+		System.out.println("couc");
+		
+		
 	}
+	
+	
+	
 	
 }

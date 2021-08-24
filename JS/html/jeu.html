@@ -28,14 +28,42 @@
     
       
           <div id="titre">CAN'T STOP</div>
-          <canvas id="myCanvas" width=1200" height="700" style="border:1px solid 
-          #d3d3d3;">
-          <script>new jeu(1200,700).dessinerJeu()</script>
-          </canvas>
-          
+          <form>
+            <div>
+              <label for="uname" >Veuillez choisir un nom d'utilisateur :</label>
+              <input type="text" id="pseudo" name="name">
+            </div>
+            <div>
+              <button onclick=debut() >Se connecter</button>
+            </div>
+          </form>
+
+          <div id="middle">
+            <div id="pion">
+              <img src="/img/cavalier.png">
+              <img src="/img/cavalier.png">
+              <img src="/img/cavalier.png">
+            </div>
+           
+            <canvas id="myCanvas" width="1200" height="700" style="border:1px solid 
+            #d3d3d3;">
+           <script>new jeu(1200,700).dessinerJeu()</script>
+            </canvas>
+          </div>
             <div id="de">
           <button class="big-button" >Lancer Dé</button>
+          <button class="big-button2" >Passer son tour</button>
           <div id="resultat">0 - 0 - 0 - 0</div>
+          <div id="choix">Que choisissez vous ? 
+
+            <div id="combinaison">
+              0 - 0 | 0 - 0 | 0 - 0 |
+            </div>
+            
+              <button class="combi1">Y</button> || <button class="combi2">Y</button> || 
+              <button class="combi3">Y</button> 
+            
+          </div>
             </div>
       
  

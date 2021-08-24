@@ -1,23 +1,25 @@
 package jeu;
 
+import java.net.SocketAddress;
+
 public class Identification {
 
 	private String nom;
-	private int niveau;
+	private boolean tour; //0 peut pas jouer et 1 peut joeur
 	
 	public Identification() {}
 	
-	public Identification(String nom,int niveau) {
+	public Identification(String nom) {
 		this.nom = nom;
-		this.niveau = niveau;
+		this.tour = false;
 	}
 	
 	public String getNom() {return nom;}
-	
-	public int getNiveau() {return niveau;}
 
 	public void setNom(String nom) {this.nom = nom;}
 	
-	public void setNiveau(int niveau) {this.niveau = niveau;}
+	public boolean getTour() {return tour;}
+	
+	public void setTour(boolean tour) {this.tour = tour;}
 	
 }
