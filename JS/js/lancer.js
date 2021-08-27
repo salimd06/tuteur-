@@ -56,6 +56,10 @@ class lancer{
         }
        
     }
+
+    ChoisirPasserTour(){
+        this.connexion.EnvoyerCombi({choix1:-10,choix2:-10});
+    }
     
     
 }

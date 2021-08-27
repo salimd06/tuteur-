@@ -50,7 +50,7 @@ public class Serveur {
 		Serveur serveur = new Serveur();
 		GestionnaireJeu gestionnaire = new GestionnaireJeu();
 		
-		ConnexionServeur connexion = new ConnexionServeur("127.0.0.1",10110);
+		ConnexionServeur connexion = new ConnexionServeur("127.0.0.1",10112);
 		
 		
 

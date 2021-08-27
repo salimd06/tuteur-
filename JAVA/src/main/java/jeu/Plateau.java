@@ -3,17 +3,17 @@ package jeu;
 import java.util.ArrayList;
 
 public class Plateau {
-	ArrayList<Integer> deux;
-	ArrayList<Integer> trois;
-	ArrayList<Integer> quatre;
-	ArrayList<Integer> cinq;
-	ArrayList<Integer> six;
-	ArrayList<Integer> sept;
-	ArrayList<Integer> huit;
-	ArrayList<Integer> neuf;
-	ArrayList<Integer> dix;
-	ArrayList<Integer> onze;
-	ArrayList<Integer> douze;
+	private ArrayList<Integer> deux;
+	private ArrayList<Integer> trois;
+	private ArrayList<Integer> quatre;
+	private ArrayList<Integer> cinq;
+	private ArrayList<Integer> six;
+	private ArrayList<Integer> sept;
+	private ArrayList<Integer> huit;
+	private ArrayList<Integer> neuf;
+	private ArrayList<Integer> dix;
+	private ArrayList<Integer> onze;
+	private ArrayList<Integer> douze;
 	
 	public void Plateau() {
 		this.deux = new ArrayList<Integer>() {{

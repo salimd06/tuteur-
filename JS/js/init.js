@@ -1,7 +1,7 @@
 
     window.addEventListener("DOMContentLoaded", () => {
     // mise en place du réseau
-    const socket = io('http://127.0.0.1:10110/');
+    const socket = io('http://127.0.0.1:10112/');
     const connexion = new connexionClient(socket);
     const de = document.getElementById("resultat");
     const combinaison = document.getElementById("combinaison");
@@ -18,6 +18,8 @@
     const combi3 = document.querySelector(".combi3");
     combi3.addEventListener("click", () => controleur.ChoisirCombi3());
 
+    const bouton2 = document.querySelector("button.big-button2");
+    bouton2.addEventListener("click", () => controleur.ChoisirPasserTour());
 
     connexion.init();
 
